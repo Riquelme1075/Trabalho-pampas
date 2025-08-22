@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Temático do Pampa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .main-image {
+      width: 250px;
+      height: auto;
+      background-color: #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border: 2px solid #aaa;
+    }
+
+    .main-image img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .side-images {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      font-size: 7px;
+    }
+
+    .side-images h1{
+        justify-content: center;
+        display: flex;
+    }
+
+    .side-images img {
+      width: auto;
+      height: 90px;
+      object-fit: cover;
+      border: 1px solid #aaa;
+      cursor: pointer;
+
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .buttons button {
+      padding: 10px 17px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>PAMPA</h1>
+  <h2>Riquelme, Victor e Gabriel</h2>
+
+  <div class="container">
+    <div class="main-image">
+      <img id="mainImg" src="img/ano0.jpg" alt="Imagem central">
+    </div>
+
+    <div class="side-images">
+        <div class="animal1">
+      <img id="side1" src="img/queroquero.jpg" alt="Imagem 1">
+      <h1 id="nome1">Quero-Quero</h1>
+    </div>
+    <div class="animal2">
+      <img id="side2" src="img/zorrilho.jpg" alt="Imagem 2">
+      <h1 id="nome2">Zorrilho</h1>
+    </div>
+    <div class="animal3">
+      <img id="side3" src="img/joao.jpg" alt="Imagem 3">
+      <h1 id="nome3">João-de-barro</h1>
+    </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="changeEpoch('0')">0 anos</button>
+    <button onclick="changeEpoch('20')">20 milhões</button>
+    <button onclick="changeEpoch('50')">50 milhões</button>
+    <button onclick="changeEpoch('90')">90 milhões</button>
+    <button onclick="changeEpoch('120')">120 milhões</button>
+  </div>
+
+  <script>
+    function changeEpoch(epoch) {
+      // Aqui você pode trocar as imagens conforme a época
+      switch(epoch) {
+        case '0':
+          document.getElementById('mainImg').src = 'img/ano0.jpg';
+          document.getElementById('side1').src = 'img/queroquero.jpg';
+          document.getElementById('nome1').innerText = 'Quero-Quero';
+          document.getElementById('side2').src = 'img/zorrilho.jpg';
+          document.getElementById('nome2').innerText = 'Zorrilho';
+          document.getElementById('side3').src = 'img/joao.jpg';
+          document.getElementById('nome3').innerText = 'Joao-de-barro';
+          break;
+        case '20':
+          document.getElementById('mainImg').src = 'img/ano20.jpg';
+          document.getElementById('side1').src = 'img/hippidon.jpg';
+          document.getElementById('nome1').innerText = 'Hippidon';
+          document.getElementById('side2').src = 'img/camelo.jpg';
+          document.getElementById('nome2').innerText = 'Macrauchenia';
+          document.getElementById('side3').src = 'img/roeadores.jpg';
+          document.getElementById('nome3').innerText = 'roeadores primitivos';
+          break;
+        case '50':
+          document.getElementById('mainImg').src = 'img/ano50.jpg';
+          document.getElementById('side1').src = 'img/Notoungulados.jpg';
+          document.getElementById('nome1').innerText = 'Notoungulados';
+          document.getElementById('side2').src = 'img/Xenartros.jpg';
+          document.getElementById('nome2').innerText = 'Xenartos';
+          document.getElementById('side3').src = 'img/Uberabatitan.jpg';
+          document.getElementById('nome3').innerText = 'Uberabatitan';
+          break;
+        case '90':
+          document.getElementById('mainImg').src = 'img/ano90.jpg';
+          document.getElementById('side1').src = 'img/dinocefalio.jpg';
+          document.getElementById('nome1').innerText = 'Dinocefalio';
+          document.getElementById('side2').src = 'img/Gondwanatitan.jpg';
+          document.getElementById('nome2').innerText = 'Gondwanatitan';
+          document.getElementById('side3').src = 'img/Pycnonemosaurus.jpg';
+          document.getElementById('nome3').innerText = 'Pycnonemosaurus';
+          break;
+        case '120':
+          document.getElementById('mainImg').src = 'img/ano120.jpg';
+          document.getElementById('side1').src = 'img/teyujagua.jpg';
+          document.getElementById('nome1').innerText = 'teyujagua';
+          document.getElementById('side2').src = 'img/Staurikosaurus.jpg';
+          document.getElementById('nome2').innerText = 'Staurikosaurusn';
+          document.getElementById('side3').src = 'img/Pampadromaeus.jpg';
+          document.getElementById('nome3').innerText = 'Pampadromaeus';
+          break;
+      }
+    }
+  </script>
+
+</body>
+</html>
